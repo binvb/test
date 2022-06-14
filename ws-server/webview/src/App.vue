@@ -3,13 +3,28 @@ const socket = new WebSocket('ws://66.42.50.27:3002');
 
 // Connection opened
 socket.addEventListener('open', function (event) {
-    socket.send('Hello Server!');
+    // socket.send('Hello Server!');
+    // setInterval(() => {
+    //   try {
+    //      socket.send('client -> server 定时发送')
+    //   } catch(err) {
+    //     console.log(`client定时发送失败: ${err}`)
+    //   }
+    // }, 1000)
 });
 
-// Listen for messages
-socket.addEventListener('message', function (event) {
+// on message
+socket.addEventListener('message', (event) => {
     console.log('Message from server ', event.data);
 });
+// on closed
+socket.addEventListener('close', (event) => {
+  console.log(`连接关闭: ${event}`)
+})
+// on error
+socket.addEventListener('error', (err) => {
+  console.log(`连接异常: ${err}`)
+})
 </script>
 
 <template>

@@ -12,7 +12,7 @@ wss.on('connection', function connection(ws) {
     })
   });
 
-  setInterval(() => {
+  setTimeout(() => {
     let message = `测试的消息，时间戳为： ${new Date().getTime()}`
     ws.send(message, (err) => {
       if(err) {
@@ -20,5 +20,5 @@ wss.on('connection', function connection(ws) {
       }
       console.log(`消息发送成功:${message}`)
     });
-  }, 10000)
+  }, 30000)
 });
