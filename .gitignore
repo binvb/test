@@ -1,0 +1,8 @@
+node_modules
+resources
+outApp
+database.sqlite
+build
+.DS_Store
+msgList.zip
+ormlogs.log
