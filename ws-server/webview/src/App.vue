@@ -1,5 +1,5 @@
 <script setup>
-const socket = new WebSocket('ws://localhost:3002');
+const socket = new WebSocket('ws://66.42.50.27:3002');
 
 // Connection opened
 socket.addEventListener('open', function (event) {
